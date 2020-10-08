@@ -5550,7 +5550,7 @@ p {
     display: block; }
   .w3l-form1 .signin-form .form-input {
     margin-bottom: 15px; }
-  .w3l-form1 .signin-form input[type="text"], .w3l-form1 .signin-form input[type="email"], .w3l-form1 .signin-form input[type="password"] {
+  .w3l-form1 .signin-form input[type="text"], .w3l-form1 .signin-form input[type="email"], .w3l-form1 .signin-form input[type="address"], .w3l-form1 .signin-form input[type="telephone"], .w3l-form1 .signin-form input[type="password"] {
     background: #ffffff;
     border: 1px solid #777;
     outline: none;
