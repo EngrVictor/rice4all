@@ -1,0 +1,24 @@
+{
+  "name": "rice4all",
+  "version": "1.0.0",
+  "description": "A simple website for a rice selling business",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app",
+    "start": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EngrVictor/rice4all.git"
+  },
+  "author": "Gentle Coder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EngrVictor/rice4all/issues"
+  },
+  "homepage": "https://github.com/EngrVictor/rice4all#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}
