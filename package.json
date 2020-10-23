@@ -4,8 +4,8 @@
   "description": "A simple website for a rice selling business",
   "main": "app.js",
   "scripts": {
-    "test": "node app",
-    "start": "nodemon app"
+    "start": "node app",
+    "test": "nodemon app"
   },
   "repository": {
     "type": "git",
