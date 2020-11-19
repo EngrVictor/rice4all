@@ -1,0 +1,4 @@
+﻿{
+    "connectionString": "mongodb+srv://gentle_coder:vikitor@api.dlpfm.mongodb.net/rice4all?retryWrites=true&w=majority",
+    "secret": "new secret"
+}
