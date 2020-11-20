@@ -12,6 +12,7 @@ function jwt() {
             // public routes that don't require authentication
             '/signup',
             '/login',
+            '/:id',
             '/',
             '/users/authenticate',
             '/users',

@@ -1,6 +1,21 @@
 ﻿const express = require('express');
 const router = express.Router();
 const userService = require('./user.service');
+const session = require('express-session');
+const flash = require('connect-flash');
+const errorHandler = require('../_helpers/error-handler');
+const app = express();
+app.use(flash());
+
+app.use(session({
+    secret: "secret",
+    cookie: {maxAge: 60000},
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(errorHandler);
+
 
 // routes
 router.post('/authenticate', authenticate);
@@ -15,13 +30,21 @@ module.exports = router;
 
 function authenticate(req, res, next) {
     userService.authenticate(req.body)
-        .then(user => user ? res.json(user) : res.status(400).json({ message: 'Username or password is incorrect' }))
+        .then(user => {
+            if (user) {
+                res.redirect('/')
+            }else {
+                res.status('400');
+                next(err);
+                res.redirect('/login');
+                // res.render('login', { message: flash('h')})
+            }
+        })      
         .catch(err => next(err));
-}
-
+    }
 function register(req, res, next) {
     userService.create(req.body)
-        .then(() => res.send(user))
+        .then(() => res.redirect('/'))
         .catch(err => next(err));
 }
 

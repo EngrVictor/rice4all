@@ -7,10 +7,21 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const jwt = require('./_helpers/jwt');
 const errorHandler = require('./_helpers/error-handler');
+const flash = require('connect-flash');
+const session = require('express-session');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
+
+app.use(session({
+  secret: "secret",
+  cookie: {maxAge: 60000},
+  resave: false,
+  saveUninitialized: false
+}));
+
+app.use(flash());
 
 app.use(express.static(path.join(__dirname, 'assets')));
 app.use('/assets', express.static(process.cwd() + '/assets'));
@@ -22,8 +33,6 @@ app.use('/users', require('./users/users.controller'));
 
 // global error handler
 app.use(errorHandler);
-
-
 
 
 app.use(express.json());

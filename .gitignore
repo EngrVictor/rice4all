@@ -1,1 +1,7 @@
 node_modules
+ecommerce.ejs
+ecommerce-cart.ejs
+ecommerce-single.ejs
+email-template.html
+faq.ejs
+timeline.ejs
